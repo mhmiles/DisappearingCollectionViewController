@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qih-Fb-VE2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="3Mm-nx-q2g">
+            <objects>
+                <viewController id="Qih-Fb-VE2" customClass="ViewController" customModule="Sample_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTB-l2-ucW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bag-Sx-dzY">
+                                <rect key="frame" x="0.0" y="82" width="200" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2UV-7i-JxX"/>
+                                    <constraint firstAttribute="height" constant="260" id="wOg-pN-udD"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="xi3-by-rvg" kind="embed" identifier="DisappearingCollectionViewControllerSegue" id="Cot-I6-PN1"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRG-CT-pKM">
+                                <rect key="frame" x="77" y="342" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleShowButtonPress:" destination="Qih-Fb-VE2" eventType="touchUpInside" id="ywi-B2-LIP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kRG-CT-pKM" firstAttribute="centerX" secondItem="bag-Sx-dzY" secondAttribute="centerX" id="8iX-Eg-tFK"/>
+                            <constraint firstItem="bag-Sx-dzY" firstAttribute="top" secondItem="AlU-7H-oyu" secondAttribute="top" constant="62" id="C34-bT-2fy"/>
+                            <constraint firstItem="kRG-CT-pKM" firstAttribute="top" secondItem="bag-Sx-dzY" secondAttribute="bottom" id="svW-I6-uLB"/>
+                            <constraint firstItem="bag-Sx-dzY" firstAttribute="leading" secondItem="AlU-7H-oyu" secondAttribute="leading" id="teF-JZ-jAV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AlU-7H-oyu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bad-Sf-BAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1213.5999999999999" y="67.916041979010501"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="e2g-VT-uD5">
+            <objects>
+                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="xi3-by-rvg" customClass="CollectionViewController" customModule="Sample_App" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" id="oVN-wr-sCK">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="0EC-YD-qFy">
+                            <size key="itemSize" width="200" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="JlJ-ef-8qj">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MsR-QX-OyG">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYl-QK-SGf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                                    <state key="normal" title="Hide">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="hideCells" destination="xi3-by-rvg" eventType="touchUpInside" id="qbg-1e-VVf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-qC-c3a">
+                                                    <rect key="frame" x="40" y="0.0" width="40" height="50"/>
+                                                    <state key="normal" title="Add">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="insertCell" destination="xi3-by-rvg" eventType="touchUpInside" id="8cN-SW-w8a"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ad-xt-MvT">
+                                                    <rect key="frame" x="80" y="0.0" width="40" height="50"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteCell" destination="xi3-by-rvg" eventType="touchUpInside" id="vlJ-4y-zST"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcz-b8-hZE">
+                                                    <rect key="frame" x="120" y="0.0" width="40" height="50"/>
+                                                    <state key="normal" title="Swap">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="swap" destination="xi3-by-rvg" eventType="touchUpInside" id="Mnj-lB-G35"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="MsR-QX-OyG" firstAttribute="leading" secondItem="JlJ-ef-8qj" secondAttribute="leading" constant="20" id="Nh5-P4-DwO"/>
+                                    <constraint firstAttribute="bottom" secondItem="MsR-QX-OyG" secondAttribute="bottom" id="pCs-xn-an6"/>
+                                    <constraint firstAttribute="trailing" secondItem="MsR-QX-OyG" secondAttribute="trailing" constant="20" id="snc-Md-YKg"/>
+                                    <constraint firstItem="MsR-QX-OyG" firstAttribute="top" secondItem="JlJ-ef-8qj" secondAttribute="top" id="zvD-LC-TnX"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="delegate" destination="xi3-by-rvg" id="bEE-Nr-4cS"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7W-IL-9CV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="85.907046476761622"/>
+        </scene>
+    </scenes>
+</document>
