@@ -59,11 +59,11 @@ open class DisappearingCollectionViewController: UICollectionViewController {
     
     let sortedCells = collectionView!.indexPathsForVisibleItems.sorted(by: { $0.row < $1.row }).flatMap(collectionView!.cellForItem)
     
+    self._isVisible.value = true
     timingDisposble.inner = animationProducer(cells: sortedCells,
                                               transform: CGAffineTransform.identity).startWithCompleted {
                                                 self.timingDisposble.inner = nil
                                                 self.collectionView!.setCollectionViewLayout(self.visibleLayout, animated: false)
-                                                self._isVisible.value = true
     }
   }
   

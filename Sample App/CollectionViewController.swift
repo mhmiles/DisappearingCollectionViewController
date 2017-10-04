@@ -28,10 +28,6 @@ class CollectionViewController: DisappearingCollectionViewController {
     return collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
   }
   
-  override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-    return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
-  }
-  
   @IBAction func insertCell() {
     cellCount += 1
     UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
